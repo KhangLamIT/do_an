@@ -122,12 +122,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DANGNHAPController.cs" />
+    <Compile Include="Controllers\GIOHANGController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CHUDE.cs" />
     <Compile Include="Models\GIOHANG.cs" />
+    <Compile Include="Models\KHACHHANG.cs" />
     <Compile Include="Models\LOAICHUDE.cs" />
     <Compile Include="Models\LOAIMATHANG.cs" />
     <Compile Include="Models\MATHANG.cs" />
@@ -223,6 +226,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\DANGNHAP\DANGKY.cshtml" />
+    <Content Include="Views\DANGNHAP\DANGXUAT.cshtml" />
+    <Content Include="Views\DANGNHAP\DANGNHAP.cshtml" />
+    <Content Include="Views\GIOHANG\GIOHANG.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

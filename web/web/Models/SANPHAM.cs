@@ -83,5 +83,24 @@ namespace web.Models
             }
             return listBH;
         }
+         public List<SANPHAM> getDataCT(string masp)
+        {
+            List<SANPHAM> listBH = new List<SANPHAM>();
+            SqlConnection con = new SqlConnection(conf);
+            SqlCommand cmd = new SqlCommand("select * from Sanpham where masp='"+masp+"' and disabled=0", con);
+            cmd.CommandType = CommandType.Text;
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                SANPHAM emp = new SANPHAM();
+                emp.MASP = dr.GetValue(0).ToString();
+                emp.TENSP = dr.GetValue(1).ToString();
+                emp.GIABAN = dr.GetValue(3).ToString();
+                listBH.Add(emp);
+            }
+            con.Close();
+            return listBH;
+        }
     }
 }

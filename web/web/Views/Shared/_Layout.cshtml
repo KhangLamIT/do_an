@@ -78,7 +78,7 @@
             <nav class="navbar navbar-expand" aria-label="Second navbar example">
                 <div class="container">
                   <div class="d-none d-sm-block">
-                     <a class="navbar-brand" href="#"><img src="/IMG/logo.png" class="w-100"/></a>
+                     <a class="navbar-brand" href="/Index/Index"><img src="/IMG/logo.png" class="w-100"/></a>
                   </div>
                   <ul class="navbar-nav">
                       <li class="nav-item dropdown">
@@ -148,8 +148,8 @@
                                      <div class="container">
                                             Vui lòng đăng nhập để xem thông báo
                                       </div>
-                                      <a class="dropdown-item" href="#" style="background-color:red;color:white;text-align:center;border-radius:10px">Đăng nhập</a>
-                                      <a class="dropdown-item" href="#" style="color:red;text-align:center;border-radius:10px;border:1px inset red;margin-top:10px">Đăng ký</a>
+                                      <a class="dropdown-item" href="/DANGNHAP/DANGNHAP" style="background-color:red;color:white;text-align:center;border-radius:10px">Đăng nhập</a>
+                                      <a class="dropdown-item" href="/DANGNHAP/DANGKY" style="color:red;text-align:center;border-radius:10px;border:1px inset red;margin-top:10px">Đăng ký</a>
                                 </div>
                             </div>
                           </li>
@@ -185,29 +185,38 @@
                           </span>
                             <p  class="rounded-pill badge-notification bg-danger" style="margin-top: -54px;z-index: 1;width: 26px;margin-left: 17px;text-align: center;color: white;">@tong</p>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:300px">
-                         @*@{
+                         @{
                               if (m != null){
                                  SANPHAM sp = new SANPHAM();
                                  foreach (var item in m){
                                     var m2 = sp.getDataCT(item.ID);
                                     foreach (var item2 in m2){
-                                        var img="/IMG/"+item2.hinh1;
-                                        <div class="row" style="margin-top:10px;margin-left:5px">
+                                        var link = "CHITIETSP/CHITIETSP/" + item.ID;
+                                        <a href="@link">
+                                            <div class="row" style="margin-top:10px;margin-left:5px">
                                             <div class="col-4">
-                                                <img src=@img style="width: 80px; height: 80px" />
+                                                @{
+                                                    SANPHAMHINHANH SPH = new SANPHAMHINHANH();
+                                                    var sanPhamHinh = SPH.getData(@item2.MASP);
+                                                    foreach (var itemHinh in sanPhamHinh)
+                                                    {
+                                                        var hinh = "/IMG/"+itemHinh.HINH;
+                                                         <img class="card-img-top" src="@hinh" style="width: 80px; height: 80px"/>
+                                                    }
+                                                    }
                                             </div>
                                             <div class="col-6">
-                                                @item2.Ten
-                                                @item2.gia VND
+                                                <p style="font-weight:900;font-size:12px">@item2.TENSP<br /></p>
+                                                <p style="color:red">@int.Parse(item2.GIABAN).ToString("N0") VND</p>
                                             </div>
                                         </div>
+                                        </a>
                                     }
                                  }
                                 }else{
                                    <div style="margin-left:5px">Hiện chưa có sản phẩm</div>
-                                }
-                                        
-                              }     *@     
+                                }  
+                              }       
                                     <hr />
                                    <div class="row" style="margin-left:5px">
                                        <div class="col-6">
@@ -225,19 +234,17 @@
                               <span class="d-none d-sm-block" style="font-size:12px;margin-left: -14px;width:60px">Tài Khoản</span>
                           </span>
                         <div class="dropdown-menu pull-right" aria-labelledby="navbarDropdown">
-                            <div style="margin-left:10px;margin-right:10px">
+                            <div style="margin-left:10px;margin-right:10px;width:250px">
                                 @{
                                     if ((Boolean)Session["log"] == false)
                                     {
-                                        <a class="dropdown-item" href="#" style="background-color:red;color:white;text-align:center;border-radius:10px">Đăng nhập</a>
-                                        <a class="dropdown-item" href="#" style="color:red;text-align:center;border-radius:10px;border:1px inset red;margin-top:10px">Đăng ký</a>
+                                        <a class="dropdown-item" href="/DANGNHAP/DANGNHAP" style="background-color:red;color:white;text-align:center;border-radius:10px">Đăng nhập</a>
+                                        <a class="dropdown-item" href="/DANGNHAP/DANGKY" style="color:red;text-align:center;border-radius:10px;border:1px inset red;margin-top:10px">Đăng ký</a>
                                     }
                                     else
                                     {
-                                    <div class="dropdown-menu" style="width: 200px">
-                                        <a style="width: 200px">THÔNG TIN KHÁCH HÀNG</a>
-                                        <a href="/DangNhap/DangXuat" style="color:red;text-align:center;border-radius:10px;border:1px inset red;margin-top:10px">Đăng xuất</a>
-                                    </div>
+                                        <a>THÔNG TIN KHÁCH HÀNG</a><br />
+                                        <a href="/DANGNHAP/DANGXUAT" style="color:red;text-align:center;margin-top:10px" class="w-100">Đăng xuất</a>
                                     }
                                 }
                             </div>
@@ -262,7 +269,7 @@
                         </div>
                         <div class="col-12 col-xl-7">
                             @using (Html.BeginForm("_Layout", "Shared", FormMethod.Post, new { @class = "", @style = "width:75%;" }))
-                              {
+                            {
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control w-75" aria-label="Recipient's username" aria-describedby="basic-addon2" required name="Search" placeholder="Gửi bản tin cho chúng tôi" style="border-radius:10px;height:48px">
                                         <div class="input-group-append">

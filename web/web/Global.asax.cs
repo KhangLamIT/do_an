@@ -27,6 +27,10 @@ namespace web
         {
             Session["log"] = false;
             Session["GioHang"] = false;
+            Session["Ho"] = "";
+            Session["Ten"] = "";
+            Session["SDT"] = "";
+            Session["Email"] = "";
         }
     }
 }

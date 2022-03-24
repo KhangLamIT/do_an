@@ -246,6 +246,7 @@ CONSTRAINT fk_SPCD_KHNGT
 )
 Create table KHACHHANG(
 MAKH int IDENTITY Primary key,
+HOKH nvarchar(255),
 TENKH nvarchar(255),
 DC nvarchar(255),
 EMAIL nvarchar(255),
@@ -409,3 +410,5 @@ select * from CHUDE where disabled=0 and MALOAI='LMH001'
 select * from LOAICHUDE where disabled=0 and macd='CDH001'
 
 select * from QUANGCAO where disabled=0
+
+select * from KHACHHANG
