@@ -1,17 +1,5 @@
 C:\Users\ADMIN\Desktop\do_an\web\web\bin\web.dll
 C:\Users\ADMIN\Desktop\do_an\web\web\bin\web.pdb
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\Antlr3.Runtime.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\EntityFramework.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\Newtonsoft.Json.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.Mvc.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.Optimization.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.Providers.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.Razor.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.WebPages.Deployment.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.WebPages.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.WebPages.Razor.dll
-C:\Users\ADMIN\Desktop\do_an\web\web\bin\WebGrease.dll
 C:\Users\ADMIN\Desktop\do_an\web\web\bin\EntityFramework.xml
 C:\Users\ADMIN\Desktop\do_an\web\web\bin\Newtonsoft.Json.xml
 C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.Mvc.xml

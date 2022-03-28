@@ -31,6 +31,7 @@ namespace web
             Session["Ten"] = "";
             Session["SDT"] = "";
             Session["Email"] = "";
+            Session["KM"] = null;
         }
     }
 }

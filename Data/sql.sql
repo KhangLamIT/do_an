@@ -296,14 +296,18 @@ QUANHUYEN nvarchar(255),
 PHUONGXA nvarchar(255),
 EMAIL nvarchar(255),
 HINHTHUC int,
-TRANGTHAI int,
+TRANGTHAI int DEFAULT 0,
 MAKH int DEFAULT NULL,
-MAKHM nchar(10),
+MAKHM nchar(10) NULL,
+HOTEN nvarchar(255),
+DIACHI nvarchar(255),
   CONSTRAINT fk_DONHANG_KH
   FOREIGN KEY (MAKH) REFERENCES KHACHHANG (MAKH),
   CONSTRAINT fk_DONHANG_KM
   FOREIGN KEY (MAKHM) REFERENCES KHUYENMAI (MAKHM),
 )
+alter table donhang
+add TIENGIAM INT 
 Create table DONHANGCT(
 MADH int,
 MASP nchar(10),
@@ -412,3 +416,5 @@ select * from LOAICHUDE where disabled=0 and macd='CDH001'
 select * from QUANGCAO where disabled=0
 
 select * from KHACHHANG
+
+select * from DONHANG

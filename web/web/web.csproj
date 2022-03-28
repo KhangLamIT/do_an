@@ -124,13 +124,17 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DANGNHAPController.cs" />
     <Compile Include="Controllers\GIOHANGController.cs" />
+    <Compile Include="Controllers\HOADONController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\THANHTOANController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CHUDE.cs" />
+    <Compile Include="Models\DONHANG.cs" />
     <Compile Include="Models\GIOHANG.cs" />
     <Compile Include="Models\KHACHHANG.cs" />
+    <Compile Include="Models\KHUYENMAI.cs" />
     <Compile Include="Models\LOAICHUDE.cs" />
     <Compile Include="Models\LOAIMATHANG.cs" />
     <Compile Include="Models\MATHANG.cs" />
@@ -138,9 +142,33 @@
     <Compile Include="Models\SANPHAM.cs" />
     <Compile Include="Models\SANPHAMHINHANH.cs" />
     <Compile Include="Models\xuly.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\web.dll" />
+    <Content Include="bin\web.pdb" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\dinhdanh.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -198,7 +226,32 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="IMG\310x210-300.jpg" />
+    <Content Include="IMG\392x156_manga.jpg" />
+    <Content Include="IMG\840x320_-_Alphabooks_.jpg" />
+    <Content Include="IMG\840x320_-_DISNEY-100.jpg" />
+    <Content Include="IMG\840x320_-_Shopeepay_T3-100.jpg" />
+    <Content Include="IMG\840x320_Dong_A_edit_moi.jpg" />
+    <Content Include="IMG\d-day2_840x320_edit_moi.jpg" />
+    <Content Include="IMG\HoiSachOnline_T322_mainbanner__1263x60_moi.jpg" />
+    <Content Include="IMG\HoiSachOnline_T322_mainbanner__840x320_moi.jpg" />
+    <Content Include="IMG\image_233238.jpg" />
+    <Content Include="IMG\image_241202.jpg" />
+    <Content Include="IMG\logo.png" />
+    <Content Include="IMG\ra bo suoi_350x415Artboard 1.jpg" />
+    <Content Include="IMG\set_310x210_bo2_T3.jpg" />
+    <Content Include="IMG\set_310x210_bo3_T3.png" />
+    <Content Include="IMG\set_392x156_bo1_sub_banner.jpg" />
+    <Content Include="IMG\set_392x156_bo1_sub_banner.png" />
+    <Content Include="IMG\tải xuống %281%29.htm" />
+    <Content Include="IMG\VNPAY_THANG3_22.03_310 x 210_moi.jpg" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\web.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="obj\Debug\web.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\web.dll" />
+    <Content Include="obj\Debug\web.pdb" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -225,14 +278,19 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\DANGNHAP\DANGKY.cshtml" />
     <Content Include="Views\DANGNHAP\DANGXUAT.cshtml" />
     <Content Include="Views\DANGNHAP\DANGNHAP.cshtml" />
     <Content Include="Views\GIOHANG\GIOHANG.cshtml" />
+    <Content Include="Views\THANHTOAN\THANHTOAN.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\HOADON\HOADON.cshtml" />
+    <Content Include="Views\HOADON\CTHOADON.cshtml" />
+    <Content Include="Views\HOADON\HTHOADON.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
