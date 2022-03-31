@@ -88,12 +88,11 @@ namespace web.Controllers
                                         }
                                         Session["KM"] = null;
                                         Session["GH"] = null;
-                                        return RedirectToAction("HOADON", "HOADON");
                                     }
                                 }
                             }
                         }
-
+                        return RedirectToAction("HOADON", "HOADON");
                     }
                 }
                 else
@@ -141,7 +140,7 @@ namespace web.Controllers
                                 }
                             }
                         }
-
+                        return RedirectToAction("HOADON", "HOADON");
                     }
                 }
             }

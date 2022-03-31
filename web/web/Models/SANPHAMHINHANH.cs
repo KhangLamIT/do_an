@@ -30,5 +30,23 @@ namespace web.Models
             con.Close();
             return listBH;
         }
+        public List<SANPHAMHINHANH> getData2(string masp)
+        {
+            List<SANPHAMHINHANH> listBH = new List<SANPHAMHINHANH>();
+            SqlConnection con = new SqlConnection(conf);
+            SqlCommand cmd = new SqlCommand("select * from SANPHAMHINHANH where disabled=0  and masp='" + masp + "'", con);
+            cmd.CommandType = CommandType.Text;
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                SANPHAMHINHANH emp = new SANPHAMHINHANH();
+                emp.ID = dr.GetValue(0).ToString();
+                emp.HINH = dr.GetValue(2).ToString();
+                listBH.Add(emp);
+            }
+            con.Close();
+            return listBH;
+        }
     }
 }

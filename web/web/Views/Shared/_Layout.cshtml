@@ -19,8 +19,6 @@
         window.addEventListener("resize", function() {
             "use strict"; window.location.reload(); 
         });
-
-
         document.addEventListener("DOMContentLoaded", function(){
         
             /////// Prevent closing from click inside dropdown
@@ -29,10 +27,8 @@
                     e.stopPropagation();
                 });
             });
-
             // make it as accordion for smaller screens
             if (window.innerWidth < 992) {
-
                 // close all inner dropdowns when parent is closed
                 document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
                     everydropdown.addEventListener('hidden.bs.dropdown', function () {
@@ -43,7 +39,6 @@
                         });
                     })
                 });
-
                 document.querySelectorAll('.has-megasubmenu a').forEach(function(element){
                     element.addEventListener('click', function (e) {
 		
@@ -51,13 +46,11 @@
                         if(nextEl && nextEl.classList.contains('megasubmenu')) {	
                             // prevent opening link if link needs to open dropdown
                             e.preventDefault();
-
                             if(nextEl.style.display == 'block'){
                                 nextEl.style.display = 'none';
                             } else {
                                 nextEl.style.display = 'block';
                             }
-
                         }
                     });
                 })
@@ -91,8 +84,9 @@
                                   var lMatHang = LMH.getData();
                                   foreach (var item in lMatHang)
                                   {
+                                      var link = "/DSSP/LOAIMATHANG/"+item.ID;
                                       <li class="has-submenu">
-                                          <a class="dropdown-item" href="#"> @item.Ten</a>
+                                          <a class="dropdown-item" href="@link"> @item.Ten</a>
                                           <div class="megasubmenu dropdown-menu">
                                               <div class="row">
                                                   @{
@@ -100,14 +94,16 @@
                                                    var chuDe = CD.getData(@item.ID);
                                                    foreach (var itemCd in chuDe)
                                                    {
+                                                       var link2 = "/DSSP/CHUDE/" + itemCd.ID;
                                                       <div class="col-3">
-                                                          <a class="w-100" style="font-weight:bold;font-size:12px;color:black" href="#"> @itemCd.Ten</a>
+                                                          <a class="w-100" style="font-weight:bold;font-size:12px;color:black" href="@link2"> @itemCd.Ten</a>
                                                           @{
                                                        LOAICHUDE LCD = new LOAICHUDE();
                                                        var loaiChuDe = LCD.getData(@itemCd.ID);
                                                        foreach (var itemLCd in loaiChuDe)
                                                        {
-                                                           <a class="dropdown-item w-100" href="#"> @itemLCd.Ten</a>
+                                                           var link3 = "/DSSP/LOAICHUDE/" + itemLCd.ID;
+                                                           <a class="dropdown-item w-100" href="@link3"> @itemLCd.Ten</a>
                                                               }
                                                     }
                                                     </div>  
@@ -191,7 +187,7 @@
                                  foreach (var item in m){
                                     var m2 = sp.getDataCT(item.ID);
                                     foreach (var item2 in m2){
-                                        var link = "CHITIETSP/CHITIETSP/" + item.ID;
+                                        var link = "/CHITIETSP/CHITIETSP/" + item.ID;
                                         <a href="@link">
                                             <div class="row" style="margin-top:10px;margin-left:5px">
                                             <div class="col-4">

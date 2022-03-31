@@ -10,3 +10,5 @@ C:\Users\ADMIN\Desktop\do_an\web\web\bin\System.Web.WebPages.Razor.xml
 C:\Users\ADMIN\Desktop\do_an\web\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 C:\Users\ADMIN\Desktop\do_an\web\web\obj\Debug\web.dll
 C:\Users\ADMIN\Desktop\do_an\web\web\obj\Debug\web.pdb
+C:\Users\ADMIN\Desktop\do_an\web\web\bin\PagedList.xml
+C:\Users\ADMIN\Desktop\do_an\web\web\bin\PagedList.Mvc.xml

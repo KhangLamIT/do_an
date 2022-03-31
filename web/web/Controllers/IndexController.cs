@@ -50,5 +50,15 @@ namespace web.Controllers
             them(mua);
             return View();
         }
+        public ActionResult TIMKIEM()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TIMKIEM(string mua)
+        {
+            them(mua);
+            return View();
+        }
     }
 }
