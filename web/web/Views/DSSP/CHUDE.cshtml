@@ -54,7 +54,7 @@
                                 <p>@item.TENSP</p>
                                 <p style="color: red; font-weight: bold">@int.Parse(item.GIABAN).ToString("N0") đ</p>
                                 <div style="margin-right: 10px">
-                                    @using (Html.BeginForm("Index", "Index", FormMethod.Post, new { @class = "" }))
+                                    @using (Html.BeginForm("CHUDE", "DSSP", FormMethod.Post, new { @class = "" }))
                                     {
                                         <button class="btn btn-outline-warning w-100" name="mua" value="@item.MASP" type="submit" style="border-radius:25px">
                                             Thêm giỏ hàng
@@ -93,7 +93,7 @@
                                         <p>@item.TENSP</p>
                                         <p style="color: red; font-weight: bold">@int.Parse(item.GIABAN).ToString("N0") đ</p>
                                         <div style="margin-right: 10px">
-                                            @using (Html.BeginForm("Index", "Index", FormMethod.Post, new { @class = "" }))
+                                            @using (Html.BeginForm("CHUDE", "DSSP", FormMethod.Post, new { @class = "" }))
                                             {
                                                 <button class="btn btn-outline-warning w-100" name="mua" value="@item.MASP" type="submit" style="border-radius:25px">
                                                     Thêm giỏ hàng
