@@ -22,6 +22,7 @@ namespace web.Controllers
         [HttpPost]
         public ActionResult THANHTOAN(string thanhtoan, string km, string txt_km, string hoten, string email, string sdt, string tp, string qh, string ph, string td)
         {
+            var hinhthuc = 0;
             if (!string.IsNullOrEmpty(km))
             {
                 KHUYENMAI km1 = new KHUYENMAI();
@@ -35,7 +36,6 @@ namespace web.Controllers
                         Session["HTKM"] = item.HINHTHUCKM;
                         Session["KM"] = item.ST;
                         ViewBag.TT = item.ST;
-                        ViewBag.HTKM = item.HINHTHUCKM;
                     }
                     if (DateTime.Parse(item.NGAYBD) > DateTime.Now)
                     {
@@ -53,6 +53,7 @@ namespace web.Controllers
             }
             if (!string.IsNullOrEmpty(thanhtoan))
             {
+                var tong = 0;
                 DONHANG hd = new DONHANG();
                 if ((Boolean)Session["log"] == false)
                 {
@@ -76,22 +77,32 @@ namespace web.Controllers
                             foreach (var item2 in menu2)
                             {
                                 int tt = item.SL * int.Parse(item2.GIABAN);
+                                tong += tt;
                                 int kq1 = hd.CT(item.ID, item.SL, tt);
                                 if (kq1 != 0)
                                 {
                                     int kq3 = hd.update(item.ID);
                                     if (kq3 != 0)
                                     {
-                                        if (Session["KM"] != null)
-                                        {
-                                            int kq4 = hd.update2(int.Parse(Session["KM"].ToString()));
-                                        }
-                                        Session["KM"] = null;
                                         Session["GH"] = null;
                                     }
                                 }
                             }
                         }
+                        if (Session["KM"] != null)
+                        {
+                            int tg = 0;
+                            if (int.Parse(Session["HTKM"].ToString()) == 1)
+                            {
+                                tg = tong - (tong * (int.Parse(Session["KM"].ToString()) / 100));
+                            }
+                            else
+                            {
+                                tg = tong - int.Parse(Session["KM"].ToString());
+                            }
+                            int kq4 = hd.update2(tg);
+                        }
+                        Session["KM"] = null;
                         return RedirectToAction("HOADON", "HOADON");
                     }
                 }
@@ -123,23 +134,32 @@ namespace web.Controllers
                             foreach (var item2 in menu2)
                             {
                                 int tt = item.SL * int.Parse(item2.GIABAN);
+                                tong += tt;
                                 int kq1 = hd.CT(item.ID, item.SL, tt);
                                 if (kq1 != 0)
                                 {
                                     int kq3 = hd.update(item.ID);
                                     if (kq3 != 0)
                                     {
-                                        if (Session["KM"] != null)
-                                        {
-                                            int kq4 = hd.update2(int.Parse(Session["KM"].ToString()));
-                                        }
-                                        Session["KM"] = null;
                                         Session["GH"] = null;
-                                        return RedirectToAction("HOADON", "HOADON");
                                     }
                                 }
                             }
                         }
+                        if (Session["KM"] != null)
+                        {
+                            int tg = 0;
+                            if (int.Parse(Session["HTKM"].ToString()) == 1)
+                            {
+                                tg = tong - (tong * (int.Parse(Session["KM"].ToString()) / 100));
+                            }
+                            else
+                            {
+                                tg = tong - int.Parse(Session["KM"].ToString());
+                            }
+                            int kq4 = hd.update2(tg);
+                        }
+                        Session["KM"] = null;
                         return RedirectToAction("HOADON", "HOADON");
                     }
                 }
